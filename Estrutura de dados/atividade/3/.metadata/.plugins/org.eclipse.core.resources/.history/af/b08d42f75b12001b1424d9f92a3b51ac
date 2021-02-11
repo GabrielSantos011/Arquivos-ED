@@ -1,0 +1,15 @@
+package fila;
+
+import curso.Curso;
+import pilhaDinamica.No;
+
+public class No {
+	Curso curso;
+	No prox;
+	No anterior;
+
+	public No(Curso curso) {
+		this.curso=curso;
+		prox=null;
+	}
+}

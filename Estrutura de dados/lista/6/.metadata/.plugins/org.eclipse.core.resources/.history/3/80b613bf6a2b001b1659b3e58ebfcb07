@@ -1,0 +1,22 @@
+import javax.swing.JOptionPane;
+
+public class Curso {
+	private int id;
+	private String nome;
+	private String semestre;
+	private int duracao;
+	
+	public  Curso(int id, String nome, String semestre, int duracao) {
+		this.id=id;
+		this.nome=nome;
+		this.semestre=semestre;
+		this.duracao=duracao;
+	}
+	
+	public void cadastro() {
+		id=Integer.parseInt(JOptionPane.showInputDialog("adicione o id"));
+		nome=JOptionPane.showInputDialog("adiciona o nome");
+		nome=JOptionPane.showInputDialog("adiciona o semestre");
+		duracao=Integer.parseInt(JOptionPane.showInputDialog("adicione a duração"));
+	}
+}

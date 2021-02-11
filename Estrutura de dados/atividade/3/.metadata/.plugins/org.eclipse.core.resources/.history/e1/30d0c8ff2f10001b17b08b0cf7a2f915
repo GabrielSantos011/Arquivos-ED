@@ -1,0 +1,15 @@
+package listaEstatica;
+
+import javax.swing.JOptionPane;
+
+public class Main {
+	
+	public static void main(String args[]) {
+
+		String nome="";
+		nome= JOptionPane.showInputDialog("Qual é o seu nome?");
+		JOptionPane.showMessageDialog(null, "Olá, "+ nome);
+
+	}
+	
+}

@@ -1,0 +1,220 @@
+package exercícios;
+
+import javax.swing.JOptionPane;
+
+public class ex5 {
+	
+	static int tamanho = 0;
+	static int lista[] = new int[5];
+	
+	public static void main(String[] args) {
+		
+		int opc = 0;
+		
+		while(opc!=10) {
+			opc = Integer.parseInt(JOptionPane.showInputDialog("1 - verificar se a lista está vazia\n"
+					+ "2 - verificar se a lista está cheia\n"
+					+ "3 - adicionar temperatura no início da lista\n"
+					+ "4 - adicionar temperatura no final da lista\n"
+					+ "5 - adicionar temperatura em determinada posição da lista\n"
+					+ "6 - remover temperatura do início da lista\n"
+					+ "7 - remover temperatura do final da lista\n"
+					+ "8 - remover temperatura de determinada posição da lista\n"
+					+ "9 - percorrer a lista concatenando os elementos em uma String\n"
+					+ "10 - fim!"
+					+ "Digite a opção desejada: "));
+			
+			
+			switch(opc) {
+			case 1:
+				JOptionPane.showMessageDialog(null, listaVazia());
+				break;
+				
+			case 2:
+				JOptionPane.showMessageDialog(null, listaCheia());
+				break;
+				
+			case 3:
+				adicionaInicio();
+				break;
+				
+			case 4:
+				adicionaFinal();
+				break;
+				
+			case 5:
+				adicionaPosicao();
+				break;
+				
+			case 6:
+				JOptionPane.showMessageDialog(null, "o valor retornado foi de <"+removeInicio()+">");
+				break;
+				
+			case 7:
+				JOptionPane.showMessageDialog(null, "o valor retornado foi de <"+removeFinal()+">");
+				break;
+				
+			case 8:
+				JOptionPane.showMessageDialog(null, "o valor retornado foi de <"+removePosicao()+">");
+				break;
+				
+			case 9:
+				String tudo="";
+				tudo = concatena(tudo);
+				JOptionPane.showMessageDialog(null, tudo);
+				break;
+				
+			case 10:
+				JOptionPane.showMessageDialog(null,"Obrigado por usar a aplicação!");
+				break;
+				
+			default:
+				JOptionPane.showMessageDialog(null, "Digite uma opção válida");
+				
+			}
+			
+		}//end while
+		
+	}// end main
+	
+	public static boolean listaVazia() {
+		boolean be;
+		
+		if(tamanho==0) {
+			be=true;
+		}else {
+			be=false;
+		}
+		return be;
+	}
+	
+	
+	public static boolean listaCheia() {
+		boolean be;
+		
+		if(tamanho==5) {
+			be=true;
+		}else {
+			be=false;
+		}
+		return be;
+	}
+	
+	public static void adicionaInicio() {
+		if(listaCheia()==true) {
+			JOptionPane.showMessageDialog(null, "LISTA CHEIA");
+		}else {
+			for (int i=tamanho;i>0;i--) {
+				lista[i] = lista[i-1];
+				
+			}
+			int add = Integer.parseInt(JOptionPane.showInputDialog("Que temperatura deseja adicionar?"));
+			lista[0] = add;
+			tamanho++;
+		}
+		
+	}
+	
+	
+	public static void adicionaFinal() {
+		if(listaCheia()==true) {
+			JOptionPane.showMessageDialog(null, "LISTA CHEIA");
+		}else {
+			int add = Integer.parseInt(JOptionPane.showInputDialog("Que temperatura deseja adicionar?"));
+			lista[tamanho] = add;
+			tamanho++;
+		}
+		
+	}
+	
+	public static void adicionaPosicao() {
+		int add = Integer.parseInt(JOptionPane.showInputDialog("Que temperatura deseja adicionar?"));
+		int pos = Integer.parseInt(JOptionPane.showInputDialog("em qual posição deseja adicionar?"));
+		
+		if(listaCheia()==true) {
+			JOptionPane.showMessageDialog(null, "LISTA CHEIA");
+		}else if(pos<=tamanho & pos>=0) {
+			for (int i=tamanho;i>pos;i--) {
+				lista[i] = lista[i-1];
+			}
+			lista[pos]=add;
+			tamanho++;
+		}else{
+			JOptionPane.showMessageDialog(null, "você digitou uma posição invalida");
+		}
+		
+	}
+	
+	
+	public static int removeInicio() {
+		int retorno= 0;
+		if(listaVazia()==true) {
+			JOptionPane.showMessageDialog(null, "A LISTA ESTÁ VAZIA, o retorno sera vazio");
+			return retorno;
+		}else {
+			
+			retorno = lista[0];
+			
+			if(tamanho==1) {
+				lista[0]=' ';
+			}
+			for (int i=1;i<tamanho;i++) {
+				lista[i-1] = lista[i];
+			}
+			tamanho--;
+			
+			return retorno;
+			
+		}
+	}
+	
+	
+	public static int removeFinal() {
+		int retorno= 0;
+		if(listaVazia()==true) {
+			JOptionPane.showMessageDialog(null, "A LISTA ESTÁ VAZIA, o retorno será vazio");
+			return retorno;
+		}else {
+			
+			retorno = lista[tamanho-1];
+			
+			}
+			for (int i=0;i<tamanho;i++) {
+				if(i==tamanho-1) {lista[i]=' ';}
+			}
+			tamanho--;
+			
+			return retorno;
+			
+	}
+	
+	
+	public static int removePosicao() {
+		int pos = Integer.parseInt(JOptionPane.showInputDialog("Que posição deseja remover?"));
+		int retorno= 0;
+		
+		if(listaVazia()==true) {
+			JOptionPane.showMessageDialog(null, "A LISTA ESTÁ VAZIA, o retorno será vazio");
+			
+		}else if(pos>=tamanho){
+			
+			JOptionPane.showMessageDialog(null, "POSIÇÃO AINDA NÃO ADICIONADA, o retorno será vazio");
+			
+		}else if(pos>=0) {
+			retorno = lista[pos];
+			lista[pos]=0;
+			for(int i=pos; i<tamanho-1;i++) {
+				lista[i]=lista[i+1];
+			}
+			
+		}
+		return retorno;
+	}
+	
+	public static String concatena(String tudo) {
+		for(int i = 0; i<tamanho;i++) {
+			tudo+=lista[i]+"  /  ";
+		}
+		return tudo;
+	}
+}

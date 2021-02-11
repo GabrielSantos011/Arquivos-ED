@@ -1,0 +1,92 @@
+package exercícios;
+
+import javax.swing.JOptionPane;
+
+public class ex1 {
+
+	public static void main(String[] args) {
+		
+		char lista[] = new char[5];
+		int tamanho = 0;
+		int opc = 0;
+		
+		while(opc!=10) {
+			opc = Integer.parseInt(JOptionPane.showInputDialog("1 - verificar se a lista está vazia\n"
+					+ "2 - verificar se a lista está cheia\n"
+					+ "3 - adicionar caractere no início da lista\n"
+					+ "4 - adicionar caractere no final da lista\n"
+					+ "5 - adicionar caractere em determinada posição da lista\n"
+					+ "6 - remover caractere do início da lista\n"
+					+ "7 - remover caractere do final da lista\n"
+					+ "8 - remover caractere de determinada posição da lista\n"
+					+ "9 - percorrer a lista concatenando os elementos em uma String\n"
+					+ "10 - fim!"
+					+ "Digite a opção desejada: "));
+			
+			
+			switch(opc) {
+			case 1:
+				JOptionPane.showMessageDialog(null, listaVazia(lista, tamanho));
+				break;
+				
+			case 2:
+				listaCheia(lista, tamanho);
+				break;
+				
+			case 3:
+				int add = Integer.parseInt(JOptionPane.showInputDialog("Que número deseja adicionar?"));
+				adicionaInicio(lista, add);
+				break;
+				
+			case 4:
+				int add = Integer.parseInt(JOptionPane.showInputDialog("Que número deseja adicionar?"));
+				adicionaFinal(lista, add);
+				break;
+			case 5:
+				int add = Integer.parseInt(JOptionPane.showInputDialog("Que número deseja adicionar?"));
+				int pos = Integer.parseInt(JOptionPane.showInputDialog("Que posição deseja adicionar?"));
+				adicionaPosicao(lista, add, pos);
+				break;
+				
+			case 6:
+				removeInicio(lista);
+				break;
+				
+			case 7:
+				removeFim(lista);
+				break;
+				
+			case 8:
+				int pos = Integer.parseInt(JOptionPane.showInputDialog("Que posição deseja remover?"));
+				removePosicao(lista, pos);
+				break;
+				
+			case 9:
+				concatena();
+				break;
+				
+			case 10:
+				JOptionPane.showMessageDialog(null,"Obrigado por usar a aplicação!");
+				break;
+				
+			default:
+				JOptionPane.showMessageDialog("Digite uma opção válida");
+				
+			}
+			
+		}//end while
+		
+	}// end main
+	
+	public static boolean listaVazia(char lista[], int tamanho) {
+		boolean be;
+		
+		if(tamanho==0) {
+			be=true;
+		}else {
+			be=false;
+		}
+		return be;
+	}
+
+}

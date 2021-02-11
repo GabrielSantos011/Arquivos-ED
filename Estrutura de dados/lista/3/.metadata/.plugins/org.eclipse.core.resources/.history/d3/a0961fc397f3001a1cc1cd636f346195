@@ -1,0 +1,59 @@
+package exercicio3;
+
+import javax.swing.JOptionPane;
+import exercicio2.Ex2;
+
+public class TesteEx3 {
+	Ex2 e = new Ex2();
+	
+	public TesteEx3() {
+		super();
+	}
+	
+	private int pilha[]=new int[5];
+	private int topo=-1;
+	
+	
+	public boolean pilhaCheia() {
+		boolean a;
+		if(topo==4) {a=true;}else {a=false;}
+		return a;
+	}
+	
+	public boolean pilhaVazia() {
+		boolean a;
+		if(topo==-1) {a=true;}else {a=false;}
+		return a;
+	}
+	
+	
+	public void adicionaPilha(int numero) {
+		if(pilhaCheia()) {
+			JOptionPane.showMessageDialog(null, "ERRO- A pilha esta cheia");
+		}else {
+			topo++;
+			pilha[topo]=numero;
+		}
+	}
+	
+	
+	public void removePilha() {
+		if(pilhaVazia()) {
+			JOptionPane.showMessageDialog(null, "ERRO- A pilha esta vazia");
+		}else {
+			pilha[topo]=0;
+			topo--;
+		}
+
+	}
+	
+	public void infoPilha() {
+		if(pilhaVazia()) {
+			JOptionPane.showMessageDialog(null, "Pilha vazia");
+		}else {
+			JOptionPane.showMessageDialog(null, "A base da pilha esta na posição 0 e tem valor: " + pilha[0]+
+					"\nO topo da pilha esta na posição "+ topo + " e tem valor: " + pilha[topo]);
+		}
+	}
+	
+}

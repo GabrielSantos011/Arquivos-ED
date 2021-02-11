@@ -1,0 +1,22 @@
+package exercicio3;
+
+public class Ex3 {
+
+	public static void main(String[] args) {
+		TesteEx3 test = new TesteEx3();
+		
+		test.adicionaPilha(0);test.infoPilha();
+		test.adicionaPilha(1);test.infoPilha();
+		test.adicionaPilha(2);test.infoPilha();
+		test.adicionaPilha(3);test.infoPilha();
+		test.adicionaPilha(4);test.infoPilha();
+		test.adicionaPilha(5);test.infoPilha();
+		test.removePilha();test.infoPilha();
+		test.removePilha();test.infoPilha();
+		test.removePilha();test.infoPilha();
+		test.removePilha();test.infoPilha();
+		test.removePilha();test.infoPilha();
+		test.removePilha();test.infoPilha();
+	}
+
+}

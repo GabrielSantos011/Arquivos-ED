@@ -1,0 +1,59 @@
+package pilhaDinamica;
+
+import javax.swing.JOptionPane;
+
+public class PilhaDinamicaMain {
+
+	public static void main(String[] args) {
+
+int opc = 0;
+		
+		while(opc!=9) {
+			opc = Integer.parseInt(JOptionPane.showInputDialog("1 - verificar se a pilha está vazia\n"
+					+ "2 - verificar se a pilha está cheia\n"
+					+ "3 - adicionar no final da pilha\n"
+					+ "4 - remover do final da pilha\n"
+					+ "5 - percorrer a lista concatenando os elementos em uma String\n"
+					+ "9 - fim!"
+					+ "Digite a opção desejada: "));
+			
+			
+			switch(opc) {
+			case 1:
+				JOptionPane.showMessageDialog(null, pilhaVazia());
+				break;
+				
+			case 2:
+				JOptionPane.showMessageDialog(null, pilhaCheia());
+				break;
+				
+			case 3:
+				adicionaFinal();
+				break;
+				
+			case 4:
+				removeFinal();
+				break;
+				
+			case 5:
+				String tudo="";
+				tudo = concatena(tudo);
+				JOptionPane.showMessageDialog(null, tudo);
+				break;
+				
+			case 9:
+				JOptionPane.showMessageDialog(null,"Obrigado por usar a aplicação!");
+				break;
+				
+			default:
+				JOptionPane.showMessageDialog(null, "Digite uma opção válida");
+				
+			}
+			
+		}//end while
+		
+	}// end main
+		
+	}
+
+}

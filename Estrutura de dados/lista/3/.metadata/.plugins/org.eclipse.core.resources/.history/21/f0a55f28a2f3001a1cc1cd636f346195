@@ -1,0 +1,52 @@
+package exercicio3;
+
+import javax.swing.JOptionPane;
+
+public class Teste {
+	
+	private int pilha[] = new int[5];
+	private int topo=-1;
+	
+	public boolean pilhaCheia() {
+		boolean a;
+		if (topo==4) {
+			a=true;
+		}else {
+			a=false;
+		}
+		return a;
+	}
+	
+	
+	public boolean pilhaVazia() {
+		boolean a;
+		if (topo==-1) {
+			a=true;
+		}else {
+			a=false;
+		}
+		return a;
+	}
+	
+	
+	public void adicionaPilha(int numero) {
+		topo++;
+		pilha[topo]=numero;
+		
+	}
+	
+	public void removePilha() {
+		pilha[topo]=0;
+		topo--;
+	}
+	
+	public void infoPilha() {
+		if(pilhaVazia()) {
+			JOptionPane.showMessageDialog(null, "pilha vazia");
+		}else {
+			JOptionPane.showMessageDialog(null, "A base da pilha tem base na posição 0 e tem valor" + pilha[0] + 
+					"\nO topo da pilha fica na posiçao: " + topo + " e tem valor " + pilha[topo]);
+		}
+	}
+
+}

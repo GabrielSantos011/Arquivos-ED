@@ -1,0 +1,53 @@
+package exercicio1;
+
+import javax.swing.JOptionPane;
+
+public class Ex1 {
+	
+	private static int fila[]= new int[5];
+	private static int inicio=0;
+	private static int prox;
+	private static int tamanho=0;
+	
+	public static void main(String [] args) {
+		
+		adiciona(20);
+		adiciona(10);
+		adiciona(10);
+		adiciona(10);
+		adiciona(10);
+		adiciona(10);
+		
+	}
+	
+	
+	public static boolean vazia() {
+		boolean a;
+		if(tamanho == 0) {a=true;}else {a=false;}
+		return a;
+	}
+	
+	public static boolean cheia() {
+		boolean a;
+		if(tamanho == 5) {a=true;System.out.println("aaaaaaaaaaaaaa ta cheiaaaaa");}else {a=false;}
+		
+		return a;
+	}
+	
+	public static void adiciona(int numero) {
+		if(cheia()) {
+			JOptionPane.showMessageDialog(null, "A fila está cheia");
+		}else if(prox<=3){
+			fila[prox]=numero;
+			tamanho++;
+			prox++;
+			JOptionPane.showMessageDialog(null, "O início da fila fica na posiçao: " + inicio + 
+					"\nO primeiro elemento da fila é " + fila[inicio] + 
+					"\nO fim da fila fica na posiçao: " + (prox-1) + 
+					"\nO valor da posição final é: " + fila[prox-1]);
+		}
+	}
+	
+	
+	
+}

@@ -1,0 +1,23 @@
+package ex2;
+
+public class No {
+	
+	private double elemento;
+	private No proximo;
+
+	public double getElemento() {
+		return elemento;
+	}
+
+	public void setElemento(double elemento) {
+		this.elemento = elemento;
+	}
+
+	public No getProximo() {
+		return proximo;
+	}
+
+	public void setProximo(No proximo) {
+		this.proximo = proximo;
+	}
+}

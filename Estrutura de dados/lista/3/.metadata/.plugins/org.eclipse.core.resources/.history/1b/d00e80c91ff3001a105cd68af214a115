@@ -1,0 +1,28 @@
+package exercicio1;
+
+import exercicio2.Ex2;
+
+public class Ex1 {
+	
+	public static void main(String [] args) {
+		
+		Ex2 e = new Ex2();
+		e.adiciona(0);e.info();
+		e.adiciona(1);e.info();
+		e.adiciona(2);e.info();
+		e.remove();e.info();
+		e.adiciona(3);e.info();
+		e.adiciona(4);e.info();
+		e.adiciona(5);e.info();
+		e.remove();e.info();
+		e.remove();e.info();
+		e.remove();e.info();
+		e.remove();e.info();
+		e.remove();e.info();
+		
+		
+	}
+	
+	
+	
+}

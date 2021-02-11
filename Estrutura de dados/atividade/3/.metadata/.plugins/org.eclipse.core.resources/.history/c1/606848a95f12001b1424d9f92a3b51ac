@@ -1,0 +1,76 @@
+package listaLigada;
+
+import javax.swing.JOptionPane;
+
+public class ListaLigadaMain {
+	
+public static void main(String[] args) {
+		
+		int opc = 0;
+		
+		while(opc!=10) {
+			opc = Integer.parseInt(JOptionPane.showInputDialog(
+					"1 - adicionar no início da lista\n"
+					+ "2 - adicionar no final da lista\n"
+					+ "3 - adicionar em determinada posição da lista\n"
+					+ "4 - remover do início da lista\n"
+					+ "5 - remover do final da lista\n"
+					+ "6 - remover de determinada posição da lista\n"
+					+ "7 - percorrer a lista concatenando os elementos em uma String\n"
+					+ "9 - fim!"
+					+ "Digite a opção desejada: "));
+			
+			
+			switch(opc) {
+			case 1:
+				JOptionPane.showMessageDialog(null, listaVazia());
+				break;
+				
+			case 2:
+				JOptionPane.showMessageDialog(null, listaCheia());
+				break;
+				
+			case 3:
+				adicionaInicio();
+				break;
+				
+			case 4:
+				adicionaFinal();
+				break;
+				
+			case 5:
+				adicionaPosicao();
+				break;
+				
+			case 6:
+				JOptionPane.showMessageDialog(null, "o valor retornado foi de <"+removeInicio()+">");
+				break;
+				
+			case 7:
+				JOptionPane.showMessageDialog(null, "o valor retornado foi de <"+removeFinal()+">");
+				break;
+				
+			case 8:
+				JOptionPane.showMessageDialog(null, "o valor retornado foi de <"+removePosicao()+">");
+				break;
+				
+			case 9:
+				String tudo="";
+				tudo = percorre(tudo);
+				JOptionPane.showMessageDialog(null, tudo);
+				break;
+				
+			case 10:
+				JOptionPane.showMessageDialog(null,"Obrigado por usar a aplicação!");
+				break;
+				
+			default:
+				JOptionPane.showMessageDialog(null, "Digite uma opção válida");
+				
+			}
+			
+		}//end while
+		
+	}// end main
+
+}

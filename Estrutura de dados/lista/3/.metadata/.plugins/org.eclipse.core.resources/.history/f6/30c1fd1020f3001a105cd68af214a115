@@ -1,0 +1,42 @@
+package exercicio1;
+
+import javax.swing.JOptionPane;
+
+import exercicio2.Ex2;
+
+public class Ex1 {
+	
+	public static void main(String [] args) {
+		
+		Ex2 e = new Ex2();
+		e.adiciona(0);e.info();
+		JOptionPane.showMessageDialog(null, "aaaaaaaaaaaaaaaaaaa");
+		e.adiciona(1);e.info();
+		JOptionPane.showMessageDialog(null, "aaaaaaaaaaaaaaaaaaa");
+		e.adiciona(2);e.info();
+		JOptionPane.showMessageDialog(null, "aaaaaaaaaaaaaaaaaaa");
+		e.remove();e.info();
+		JOptionPane.showMessageDialog(null, "aaaaaaaaaaaaaaaaaaa");
+		e.adiciona(3);e.info();
+		JOptionPane.showMessageDialog(null, "aaaaaaaaaaaaaaaaaaa");
+		e.adiciona(4);e.info();
+		JOptionPane.showMessageDialog(null, "aaaaaaaaaaaaaaaaaaa");
+		e.adiciona(5);e.info();
+		JOptionPane.showMessageDialog(null, "aaaaaaaaaaaaaaaaaaa");
+		e.remove();e.info();
+		JOptionPane.showMessageDialog(null, "aaaaaaaaaaaaaaaaaaa");
+		e.remove();e.info();
+		JOptionPane.showMessageDialog(null, "aaaaaaaaaaaaaaaaaaa");
+		e.remove();e.info();
+		JOptionPane.showMessageDialog(null, "aaaaaaaaaaaaaaaaaaa");
+		e.remove();e.info();
+		JOptionPane.showMessageDialog(null, "aaaaaaaaaaaaaaaaaaa");
+		e.remove();e.info();
+		JOptionPane.showMessageDialog(null, "aaaaaaaaaaaaaaaaaaa");
+		
+		
+	}
+	
+	
+	
+}

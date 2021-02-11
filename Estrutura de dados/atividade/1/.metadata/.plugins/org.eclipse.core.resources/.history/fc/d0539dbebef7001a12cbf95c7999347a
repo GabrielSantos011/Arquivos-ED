@@ -1,0 +1,18 @@
+package ex2;
+
+public class TemperaturaLista {
+	
+	No primeiro;
+	No ultimo;
+	int tamanho=0;
+	
+	public TemperaturaLista() {
+		
+		primeiro = new No();
+		ultimo=primeiro
+		
+	}
+	
+	lista
+	
+}

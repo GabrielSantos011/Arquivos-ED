@@ -1,0 +1,41 @@
+package exercicio3;
+
+public class Teste {
+	
+	private int pilha[] = new int[5];
+	private int topo=-1;
+	
+	public boolean pilhaCheia() {
+		boolean a;
+		if (topo==4) {
+			a=true;
+		}else {
+			a=false;
+		}
+		return a;
+	}
+	
+	
+	public boolean pilhaVazia() {
+		boolean a;
+		if (topo==-1) {
+			a=true;
+		}else {
+			a=false;
+		}
+		return a;
+	}
+	
+	
+	public void adicionaPilha(int numero) {
+		topo++;
+		pilha[topo]=numero;
+		
+	}
+	
+	public void removePilha() {
+		pilha[topo]=0;
+		topo--;
+	}
+
+}

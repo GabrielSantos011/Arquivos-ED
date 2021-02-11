@@ -1,0 +1,48 @@
+package exercicio3;
+
+import javax.swing.JOptionPane;
+
+public class TesteEx3 {
+	
+	public TesteEx3() {
+		super();
+	}
+	
+	private int pilha[]=new int[5];
+	private int topo=-1;
+	
+	
+	public boolean pilhaCheia() {
+		boolean a;
+		if(topo==4) {a=true;}else {a=false;}
+		return a;
+	}
+	
+	public boolean pilhaVheia() {
+		boolean a;
+		if(topo==-1) {a=true;}else {a=false;}
+		return a;
+	}
+	
+	
+	public void adiciona(int numero) {
+		if(pilhaCheia()) {
+			JOptionPane.showMessageDialog(null, "ERRO- A pilha esta cheia");
+		}else {
+			topo++;
+			pilha[topo]=numero;
+		}
+	}
+	
+	
+	public void removePilha(int numero) {
+		if(pilhaCheia()) {
+			JOptionPane.showMessageDialog(null, "ERRO- A pilha esta cheia");
+		}else {
+			topo++;
+			pilha[topo]=numero;
+		}
+
+	}
+	
+}

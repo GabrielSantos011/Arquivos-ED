@@ -1,0 +1,18 @@
+package exercicio1;
+
+public class Ex1 {
+	
+	private static int fila[]= new int[5];
+	private static int inicio=0;
+	private static int fim=0;
+	private static int tamanho=0;
+	
+	public static void main(String [] args) {
+		for(int i=0;i<5;i++) {
+			System.out.println(fila[i]);
+		}
+		System.out.println("===============");
+		
+	}
+
+}

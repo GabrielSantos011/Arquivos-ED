@@ -1,0 +1,16 @@
+package curso;
+
+public class Curso {
+	
+	public Curso() {
+		
+	}
+	
+	int id=0;
+	String nome = "";
+	String area="";
+	String curso="";
+	int quantidadeSemestres=0;
+	String periodo="";
+
+}

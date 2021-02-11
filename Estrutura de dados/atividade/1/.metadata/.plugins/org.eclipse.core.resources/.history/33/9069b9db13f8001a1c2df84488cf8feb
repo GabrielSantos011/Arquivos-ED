@@ -1,0 +1,191 @@
+package ex2;
+
+import javax.swing.JOptionPane;
+
+public class TemperaturaLista {
+	
+	private No inicio;
+
+	public TemperaturaLista() {
+		this.inicio = null;
+	}
+
+	public void adicionarInicio(double temperatura) {
+
+		No novo = new No();
+		novo.setElemento(temperatura);
+		novo.setProximo(inicio);
+
+		if (inicio == null) {
+			inicio = novo;
+			
+		} else {
+			No auxiliar;
+			auxiliar = inicio;
+
+			novo.setElemento(temperatura);
+			novo.setProximo(inicio);
+			inicio = novo;
+			
+
+		}
+
+	}
+
+	public void adicionarFinal(double temperatura) {
+
+		if (inicio == null) {
+			No novo = new No();
+			novo.setElemento(temperatura);
+			inicio = novo;
+
+		} else {
+
+			No auxiliar = inicio;
+			while (auxiliar.getProximo() != null) {
+				auxiliar = auxiliar.getProximo();
+			}
+
+			No novo = new No();
+			novo.setElemento(temperatura);
+			auxiliar.setProximo(novo);
+
+		}
+
+	}
+
+	public double removeInicio() {
+
+		No auxiliar = inicio;
+		double elemento = -1000;
+
+		if (inicio == null) {
+			return elemento;
+
+		} else {
+			elemento = inicio.getElemento();
+			inicio = inicio.getProximo();
+
+		}
+
+		return elemento;
+	}
+
+	public double removeFinal() {
+
+		double elemento = -1000;
+		if (inicio == null) {
+			return elemento;
+		} else {
+
+			if (inicio.getProximo() == null) {
+				elemento = inicio.getElemento();
+				inicio = null;
+				return elemento;
+
+			} else {
+
+				No auxiliar = inicio;
+				No auxiliar2 = inicio;
+
+				while (auxiliar.getProximo() != null) {
+					auxiliar2 = auxiliar;
+					auxiliar = auxiliar.getProximo();
+				}
+
+				elemento = auxiliar.getElemento();
+				auxiliar2.setProximo(null);
+			}
+
+		}
+
+		return elemento;
+
+	}
+
+	public void escolhePosicao(double temperatura, int posicao) {
+
+		No novo = new No();
+		novo.setElemento(temperatura);
+
+		if (inicio == null) {
+			JOptionPane.showMessageDialog(null, "A operação não pode ser realizada, verifique a opção 1 do menu de opções.");
+		} else {
+
+			if (posicao == 1) {
+				adicionarInicio(temperatura);
+			} else {
+
+				No auxiliar = inicio;
+				int contador = 1;
+
+				while (auxiliar != null && contador < posicao - 1) {
+					auxiliar = auxiliar.getProximo();
+					contador++;
+				}
+
+				if (contador == posicao - 1) {
+					novo.setProximo(auxiliar.getProximo());
+					auxiliar.setProximo(novo);
+					
+				} else {
+
+					JOptionPane.showMessageDialog(null, "Posição inválida!");
+				}
+			}
+		}
+	}
+
+	public double removePosicao(int posicao) {
+
+		No auxiliar = inicio;
+		double elemento = -1000;
+		int contador = 1;
+
+		if (inicio == null) {
+
+			return elemento;
+		} else {
+			if (posicao == 1) {
+				elemento = removeInicio();
+			} else {
+
+				while (auxiliar.getProximo() != null) {
+					auxiliar = auxiliar.getProximo();
+					contador++;
+				}
+
+				if (posicao > contador || posicao < 0 || posicao == 0) {
+					elemento = -2000;
+					return elemento;
+
+				} else if (posicao == contador) {
+					return removeFinal();
+
+				} else {
+
+					No auxiliarInicio = auxiliar;
+
+					while (contador < posicao) {
+						auxiliarInicio = auxiliar;
+						auxiliar = auxiliar.getProximo();
+						contador++;
+					}
+
+					elemento = auxiliar.getElemento();
+					auxiliarInicio.setProximo(auxiliar.getProximo());
+
+				}
+			}
+		}
+
+		return elemento;
+
+	}
+
+	public boolean listaVazia() {
+		return (this.inicio == null);
+	}
+
+	
+}
